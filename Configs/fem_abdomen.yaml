@@ -1,0 +1,39 @@
+# Data
+dataset: 'fem_abdomen'
+noise_ratio: 0.0
+freqs: [30, 36, 42, 48]
+coords_shape: [174, 136, 20]
+spacing: 0.002
+dis_data_path: './Data/BIOQIC/downloads/AbdomenMRESimData.mat'
+gt_data_path: './Data/BIOQIC/downloads/AbdomenMRESimData.mat'
+dis_parsing_key: 'disp'
+gt_parsing_key: 'absG'
+crop_size_x: 5 
+crop_size_y: 4 
+crop_size_z: 4 
+
+
+# Model:
+pde: 'hetero'
+omega: 30
+
+# Training
+optimizer: 'adam'
+batch_size: 1024
+chunk_size: 5000
+max_epoch: 50000
+lr: 1e-4
+weight_decay: 1e-5
+log_dir: './tensorboard/MREHyper_fem_abdomen'
+pde_scheduling: True
+pde_loss_weight: 1e-17
+pde_init_weight: 1e-17
+pde_warmup_iters: 20000
+pde_step_iters: 100000
+pde_step_factor: 10
+
+
+
+
+
+

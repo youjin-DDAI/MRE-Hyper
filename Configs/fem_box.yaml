@@ -1,0 +1,33 @@
+# Data
+dataset: 'fem_box'
+noise_ratio: 0.0
+freqs: [50, 60, 70, 80, 90, 100] 
+coords_shape: [80, 100, 10]
+spacing: 0.001
+crop_size_x: 4 
+crop_size_y: 5 
+crop_size_z: 1 
+
+
+# Model:
+pde: 'hetero'
+omega: 100
+
+# Training
+optimizer: 'adam'
+batch_size: 1024
+chunk_size: 5000
+max_epoch: 50000
+lr: 1e-4
+weight_decay: 1e-5
+log_dir: './tensorboard/MREHyper_fem_box'
+pde_scheduling: True
+pde_loss_weight: 1e-17
+pde_init_weight: 1e-17
+pde_warmup_iters: 20000
+pde_step_iters: 100000
+pde_step_factor: 10
+
+
+
+

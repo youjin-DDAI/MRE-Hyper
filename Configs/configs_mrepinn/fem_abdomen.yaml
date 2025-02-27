@@ -1,0 +1,43 @@
+# Data
+dataset: 'fem_abdomen'
+noise_ratio: 0.0
+freqs: [30, 36, 42, 48]
+coords_shape: [174, 136, 20]
+spacing: 0.002
+dis_data_path: './mre_pinn/data/BIOQIC/downloads/AbdomenMRESimData.mat'
+gt_data_path: './mre_pinn/data/BIOQIC/downloads/AbdomenMRESimData.mat'
+dis_parsing_key: 'disp'
+gt_parsing_key: 'absG'
+
+
+
+# Model:
+pde: 'hetero'
+activation: 'ss'
+omega: 30
+n_layers: 5
+n_hidden: 128
+kernel_initializer: "Glorot normal"
+
+# Training
+optimizer: 'adam'
+batch_size: 1024
+chunk_size: 5000
+max_epoch: 500
+lr: 1e-4
+weight_decay: 1e-5
+log_dir: './tensorboard/mrepinn_fem_abdomen'
+pde_scheduling: True
+pde_loss_weight: 1e-16 
+pde_init_weight: 1e-18 
+pde_warmup_iters: 10000 
+pde_step_iters: 5000 
+pde_step_factor: 10
+input_scaling: True
+w_scaling: True
+mu_scaling: True
+
+
+
+
+
